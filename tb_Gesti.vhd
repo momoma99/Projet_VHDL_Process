@@ -28,12 +28,21 @@ architecture bench of tb_Gesti is
       signal_gen: process
           begin
             rst<='1';
+            Offset<="00000000";
+            nPCsel<='0';
+            wait for 20 ns;
+            rst<='0';
+            Offset<="00000000";
+            nPCsel<='0';
+            wait for 20 ns;
+            Offset<="00000000";
+            nPCsel<='1';
+            wait for 20 ns;
+            Offset<="00000001";
+            nPCsel<='1';
             wait for 20 ns;
             Offset<="00000001";
             nPCsel<='0';
-            wait for 20 ns;
-            Offset<="00000111";
-            nPCsel<='1';
             wait for 20 ns;
             wait;   
             
